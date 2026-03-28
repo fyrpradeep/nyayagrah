@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
+:root {
+  --navy:    #0a1628;
+  --navy2:   #0f1e35;
+  --navy3:   #162440;
+  --gold:    #c9a84c;
+  --gold2:   #e2c46a;
+  --gold3:   #f0d98a;
+  --gold-dk: #8a6f2e;
+  --white:   #ffffff;
+  --offwhite:#f8f5ee;
+  --muted:   #8a9bb0;
+  --light:   #c8d4e0;
+  --border:  rgba(201,168,76,0.2);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--navy2); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .font-serif { font-family: 'Cormorant Garamond', serif; }
+  .font-sans-dm { font-family: 'DM Sans', sans-serif; }
+  .text-gold { color: var(--gold); }
+  .bg-navy { background: var(--navy); }
+  .bg-navy2 { background: var(--navy2); }
+  .bg-navy3 { background: var(--navy3); }
+  .border-gold { border-color: var(--border); }
+}
+
+/* Footer responsive */
+.footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr 1fr; }
+@media (max-width: 1100px) { .footer-grid { grid-template-columns: 1fr 1fr !important; } }
+@media (max-width: 600px)  { .footer-grid { grid-template-columns: 1fr !important; } }
+
+/* Hover effects */
+.footer-link:hover { color: #c9a84c !important; }
+.service-card:hover { border-color: #c9a84c !important; transform: translateY(-3px) !important; }
+.why-card:hover { border-color: #c9a84c !important; }
+.related-link:hover { border-color: #c9a84c !important; }
